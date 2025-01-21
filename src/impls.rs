@@ -1536,6 +1536,16 @@ mod tests {
             IntoBytes,
             !Unaligned
         );
+        #[cfg(feature = "float-nightly")]
+        assert_impls!(
+            f16: KnownLayout,
+            Immutable,
+            TryFromBytes,
+            FromZeros,
+            FromBytes,
+            IntoBytes,
+            !Unaligned
+        );
         assert_impls!(
             f32: KnownLayout,
             Immutable,
@@ -1554,7 +1564,16 @@ mod tests {
             IntoBytes,
             !Unaligned
         );
-
+        #[cfg(feature = "float-nightly")]
+        assert_impls!(
+            f128: KnownLayout,
+            Immutable,
+            TryFromBytes,
+            FromZeros,
+            FromBytes,
+            IntoBytes,
+            !Unaligned
+        );
         assert_impls!(
             bool: KnownLayout,
             Immutable,
